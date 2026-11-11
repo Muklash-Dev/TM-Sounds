@@ -1,0 +1,2 @@
+rootProject.name = 'TMSounds'
+include ':app'

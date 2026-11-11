@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#9299D6</color>
+    <color name="primary_dark">#6E75B8</color>
+    <color name="accent">#B7BEE9</color>
+    <color name="bg">#0B0B10</color>
+    <color name="card">#1A1A24</color>
+    <color name="card_hi">#262633</color>
+    <color name="card_stroke">#2C2C3A</color>
+    <color name="text_primary">#F4F4F8</color>
+    <color name="text_secondary">#9D9DB4</color>
+    <color name="chip_bg">#262633</color>
+</resources>

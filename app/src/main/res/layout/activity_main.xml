@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="104dp">
+
+            <!-- ================= HOME ================= -->
+            <LinearLayout
+                android:id="@+id/homePanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TM Sounds"
+                            android:textSize="27sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Experience immersive audio"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/aboutBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="About" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="14dp">
+
+                    <com.muklashdev.tmsounds.WaveView
+                        android:id="@+id/waveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="104dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Use TM Sounds"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary" />
+
+                            <TextView
+                                android:id="@+id/masterStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Off"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_secondary" />
+                        </LinearLayout>
+
+                        <Switch
+                            android:id="@+id/masterSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Choose a profile"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/carousel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Per-device audio memory"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Remember a profile for each headphones, Bluetooth device and speaker"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+                        </LinearLayout>
+
+                        <Switch
+                            android:id="@+id/deviceMemorySwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/deviceStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/accent"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Developer"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="MD. Muklash Mia\nOpen-source app - free for everyone."
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp" />
+
+                    <Button
+                        android:id="@+id/telegramBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Telegram  ·  @muklash_dev"
+                        android:layout_marginTop="8dp" />
+
+                    <Button
+                        android:id="@+id/githubBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GitHub  ·  Muklash-Dev"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TM Sounds  ·  Version 0.1"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"
+                    android:layout_marginTop="14dp" />
+            </LinearLayout>
+
+            <!-- ================= EQUALIZER ================= -->
+            <LinearLayout
+                android:id="@+id/eqPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Equalizer"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preset"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <Spinner
+                        android:id="@+id/presetSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Equalizer View"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/viewCurveBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Curve"
+                            android:layout_marginEnd="5dp" />
+
+                        <Button
+                            android:id="@+id/viewSlidersBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sliders"
+                            android:layout_marginStart="5dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/curveCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Interactive Frequency Response"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drag the control points to adjust gain"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <com.muklashdev.tmsounds.CurveView
+                        android:id="@+id/curveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="210dp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/slidersCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/eqHint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Switch TM Sounds ON once to load your device's equalizer bands."
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <LinearLayout
+                        android:id="@+id/eqContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Band Tuner"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Step through bands and fine-tune gain in 0.1 dB steps"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/tunerPrev"
+                            android:layout_width="52dp"
+                            android:layout_height="wrap_content"
+                            android:text="&lt;" />
+
+                        <TextView
+                            android:id="@+id/tunerLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            android:text="-" />
+
+                        <Button
+                            android:id="@+id/tunerNext"
+                            android:layout_width="52dp"
+                            android:layout_height="wrap_content"
+                            android:text="&gt;" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/tunerSeek"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:progressTint="@color/accent"
+                        android:progressBackgroundTint="#3A3A4C"
+                        android:thumbTint="@color/accent"
+                        android:layout_marginTop="4dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp">
+
+                        <Button android:id="@+id/tunerMinus" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="-0.1 dB" android:layout_marginEnd="4dp" />
+                        <Button android:id="@+id/tunerZero" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="0 dB" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" />
+                        <Button android:id="@+id/tunerPlus" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="+0.1 dB" android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/resetPresetBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Reset this preset to defaults"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ================= ADVANCED ================= -->
+            <LinearLayout
+                android:id="@+id/advPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Advanced settings"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Audio tuning"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <!-- Bass enhancer -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bass enhancer" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enhances low-frequency sounds for deeper bass" android:textSize="12sp" android:textColor="@color/text_secondary" />
+                        </LinearLayout>
+
+                        <Switch android:id="@+id/bassOnSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bass level" android:textSize="13sp" android:textColor="@color/text_secondary" />
+                        <TextView android:id="@+id/bassValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/accent" />
+                    </LinearLayout>
+
+                    <SeekBar android:id="@+id/bassSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="@color/accent" android:progressBackgroundTint="#3A3A4C" android:thumbTint="@color/accent" />
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C3A" android:layout_marginTop="10dp" android:layout_marginBottom="2dp" />
+
+                    <!-- Mid enhancer -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mid enhancer" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enhances mid-frequency sounds for clearer vocals" android:textSize="12sp" android:textColor="@color/text_secondary" />
+                        </LinearLayout>
+
+                        <Switch android:id="@+id/midOnSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Mid level" android:textSize="13sp" android:textColor="@color/text_secondary" />
+                        <TextView android:id="@+id/midValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/accent" />
+                    </LinearLayout>
+
+                    <SeekBar android:id="@+id/midSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="@color/accent" android:progressBackgroundTint="#3A3A4C" android:thumbTint="@color/accent" />
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C3A" android:layout_marginTop="10dp" android:layout_marginBottom="2dp" />
+
+                    <!-- Treble enhancer -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Treble enhancer" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enhances high-frequency sounds for clearer treble" android:textSize="12sp" android:textColor="@color/text_secondary" />
+                        </LinearLayout>
+
+                        <Switch android:id="@+id/trebleOnSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Treble level" android:textSize="13sp" android:textColor="@color/text_secondary" />
+                        <TextView android:id="@+id/trebleValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/accent" />
+                    </LinearLayout>
+
+                    <SeekBar android:id="@+id/trebleSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="@color/accent" android:progressBackgroundTint="#3A3A4C" android:thumbTint="@color/accent" />
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C3A" android:layout_marginTop="10dp" android:layout_marginBottom="2dp" />
+
+                    <!-- Surround -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Surround (Virtualizer)" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                        <TextView android:id="@+id/virtValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/accent" />
+                    </LinearLayout>
+
+                    <SeekBar android:id="@+id/virtSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="@color/accent" android:progressBackgroundTint="#3A3A4C" android:thumbTint="@color/accent" />
+                </LinearLayout>
+
+                <!-- Volume card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Volume"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Volume Boost" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                        <TextView android:id="@+id/boostValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+0.0 dB" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/accent" />
+                    </LinearLayout>
+
+                    <SeekBar android:id="@+id/boostSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="@color/accent" android:progressBackgroundTint="#3A3A4C" android:thumbTint="@color/accent" />
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C3A" android:layout_marginTop="10dp" android:layout_marginBottom="2dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Volume Leveler" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Balances volume for a consistent listening experience" android:textSize="12sp" android:textColor="@color/text_secondary" />
+                        </LinearLayout>
+
+                        <Switch android:id="@+id/levelerSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/levelerStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/accent"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/engineStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="14dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Note: a few manufacturers restrict global sound effects; on those devices enhancement may apply to fewer apps. Call echo cannot be fixed by any sound app."
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ================= BOTTOM NAV ================= -->
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        android:background="@drawable/nav_bg"
+        android:padding="6dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp">
+
+            <ImageView
+                android:id="@+id/navHomeIcon"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/ic_nav_home" />
+
+            <TextView
+                android:id="@+id/navHomeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="7dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navEq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp">
+
+            <ImageView
+                android:id="@+id/navEqIcon"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/ic_nav_eq" />
+
+            <TextView
+                android:id="@+id/navEqLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equalizer"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="7dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navAdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp">
+
+            <ImageView
+                android:id="@+id/navAdvIcon"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/ic_tune" />
+
+            <TextView
+                android:id="@+id/navAdvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Advanced"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="7dp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
