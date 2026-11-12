@@ -88,6 +88,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Edge.pad(findViewById(R.id.main_root));
         prefs = FxEngine.prefs(this);
 
         // ---- bind views ----
